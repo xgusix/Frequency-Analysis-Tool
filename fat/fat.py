@@ -19,7 +19,7 @@ def count_chars(data):
 	return dic
 
 def countNchars_words(data,n):
-	reg = r"(?<=\s)[^\s]{"+str(n)+"}(?=\Z|\s)"
+	reg = r"((?<=\s)[^\s]{" +str(n)+"}(?=\Z|\s)|(?<=^)[^\s]{"+str(n)+"}(?=\Z|\s))"
 	regex = re.compile(reg)
 	groups_list = regex.findall(data)
 	dic= {}
